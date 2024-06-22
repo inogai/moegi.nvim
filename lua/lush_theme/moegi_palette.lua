@@ -1,0 +1,146 @@
+local palette = {
+  light = {
+    terminal = {
+      bg = "#f9f9f9",
+      fg = "#444444",
+
+      black = "#555555",
+      red = "#e47474",
+      green = "#66b395",
+      yellow = "#e2c97e",
+      blue = "#7098d4",
+      purple = "#b290ba",
+      cyan = "#6ab8c0",
+      white = "#dddddd",
+
+      brightblack = "#888888",
+      brightred = "#f48484",
+      brightgreen = "#76c3a5",
+      brightyellow = "#f2d98e",
+      brightblue = "#80a8e4",
+      brightpurple = "#c2a0ca",
+      brightcyan = "#7ac8d0",
+      brightwhite = "#eeeeee",
+    },
+    git = {
+      add = "#377961",
+      change = "#668f9a",
+      delete = "#cc6262",
+      renamed = "#5e8d87",
+      ignored = "#0000003f",
+      conflict = "#b85e3d",
+    },
+    tokens = {
+      yellow = "#c7792b",
+      pink = "#c05386",
+      cyan = "#668f9a",
+      pale = "#6b588e",
+      green = "#377961",
+      orange = "#b5855c",
+    },
+    diagnostics = {
+      error = "#e38181",
+      warn = "#e7d38f",
+      info = "#7098d4",
+      hint = "#6ab8c0",
+      ok = "#66b395",
+      trace = "#b290ba",
+    },
+    ui = {
+      bg = "#ffffff",
+      bg_active = "#f6f6f6",
+      float_bg = "#f9f9f9",
+      fg = "#333333",
+      fg_dimmed = "#666666",
+      linenr = "#aaaaaa",
+      linenr_active = "#444444",
+      inlayhint = "#26966a",
+      inlayhint_bg = "#dcede5",
+      codelens = "#666666",
+    },
+    ui_weak = {
+      bg = "#e2e2e2",
+    },
+    rainbow = {
+      "#b5a165",
+      "#528f77",
+      "#8e7395",
+      "#5a7aaa",
+    },
+  },
+  dark = {
+    terminal = {
+      bg = "#181818",
+      fg = "#c0c0c0",
+
+      black = "#333333",
+      red = "#e47474",
+      green = "#66b395",
+      yellow = "#e2c97e",
+      blue = "#7098d4",
+      purple = "#b290ba",
+      cyan = "#6ab8c0",
+      white = "#dddddd",
+
+      brightblack = "#666666",
+      brightred = "#f48484",
+      brightgreen = "#76c3a5",
+      brightyellow = "#f2d98e",
+      brightblue = "#80a8e4",
+      brightpurple = "#c2a0ca",
+      brightcyan = "#7ac8d0",
+      brightwhite = "#f6f6f6",
+    },
+    git = {
+      add = "#66b395",
+      change = "#e2c97e",
+      delete = "#ff8787",
+      renamed = "#6ab8c0",
+      ignored = "#ffffff3f",
+      conflict = "#dd9a6a",
+    },
+    tokens = {
+      yellow = "#f6c177",
+      pink = "#ed9cc2",
+      cyan = "#5fb5be",
+      pale = "#a0a5d6",
+      green = "#74ccaa",
+      orange = "#f3a580",
+    },
+    diagnostics = {
+      error = "#ff8787",
+      warn = "#e7d38f",
+      info = "#7098d4",
+      hint = "#6ab8c0",
+      ok = "#66b395",
+      trace = "#b290ba",
+    },
+    ui = {
+      bg = "#202020",
+      bg_active = "#333333",
+
+      float_bg = "#181818",
+
+      fg = "#dddddd",
+      fg_dimmed = "#aaaaaa",
+      linenr = "#666666",
+      linenr_active = "#dddddd",
+
+      inlayhint = "#7b7b7b",
+      inlayhint_bg = "#2b2b2b",
+
+      codelens = "#666666",
+    },
+    ui_weak = {
+      bg_weak = "#282828",
+    },
+    rainbow = {
+      "#b5a165",
+      "#528f77",
+      "#8e7395",
+      "#5a7aaa",
+    },
+  },
+}
+
+return palette
