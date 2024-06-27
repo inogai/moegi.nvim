@@ -299,6 +299,7 @@ local theme = lush(function(injected_functions)
     sym"@variable"          { Identifier }, -- Identifier
     -- sym"@type"              { }, -- Type
     -- sym"@type.definition"   { }, -- Typedef
+    sym"@type.builtin.cpp" { Statement }, -- Statement
     -- sym"@storageclass"      { }, -- StorageClass
     -- sym"@structure"         { }, -- Structure
     -- sym"@namespace"         { }, -- Identifier
