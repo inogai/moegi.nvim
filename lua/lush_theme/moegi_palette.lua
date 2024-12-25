@@ -106,6 +106,7 @@ local palette = {
       pale = "#a0a5d6",
       green = "#74ccaa",
       orange = "#f3a580",
+      gray = "#727272",
     },
     diagnostics = {
       error = "#ff8787",

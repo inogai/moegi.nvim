@@ -82,7 +82,7 @@ local theme = lush(function(injected_functions)
     -- See :h highlight-groups
     --
     -- ColorColumn    { }, -- Columns set with 'colorcolumn'
-    -- Conceal        { }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
+    Conceal        { fg = ui.fg_dimmed }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor         { }, -- Character under the cursor
     -- CurSearch      { }, -- Highlighting a search pattern under the cursor (see 'hlsearch')
     -- lCursor        { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
@@ -194,7 +194,7 @@ local theme = lush(function(injected_functions)
     Special        { fg = p.tokens.cyan }, -- (*) Any special symbol
     -- SpecialChar    { }, --   Special character in a constant
     -- Tag            { }, --   You can use CTRL-] on this
-    -- Delimiter      { }, --   Character that needs attention
+    Delimiter      { fg = p.tokens.gray }, --   Character that needs attention
     -- SpecialComment { }, --   Special things inside a comment (e.g. '\n')
     -- Debug          { }, --   Debugging statements
 
