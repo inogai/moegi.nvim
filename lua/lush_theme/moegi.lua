@@ -341,6 +341,25 @@ local theme = lush(function(injected_functions)
     NotifyINFOBorder  { gui = bold, fg = p.diagnostics.info },
     NotifyLOGBorder   { gui = bold, fg = p.diagnostics.ok },
     NotifyTRACEBorder { gui = bold, fg = p.diagnostics.trace },
+
+    DapUIScope        { fg = p.tokens.pale },
+    DapUIType         { fg = p.tokens.orange },
+    DapUiSource       { fg = p.tokens.green },
+
+    DapUIStepOver     { fg = p.tokens.cyan },
+    DapUIStepInto     { fg = p.tokens.cyan },
+    DapUIStepBack     { fg = p.tokens.cyan },
+    DapUIContinue     { fg = p.tokens.cyan },
+    DapUIModifiedValue{ fg = p.tokens.yellow },
+
+    DapUIPlayPause    { fg = p.tokens.green },
+    DapUIStop         { fg = p.diagnostics.error },
+
+    DapUIBreakpointsCurrentLine { fg = p.tokens.red },
+    DapUICurrentFrameName       { fg = p.tokens.pale },
+
+    DapUILineNumber   { fg = p.ui.linenr_active },
+    DapUIWatchesEmpty { fg = p.ui.fg_dimmed },
   }
 end)
 
