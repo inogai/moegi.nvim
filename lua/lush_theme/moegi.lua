@@ -312,6 +312,7 @@ local theme = lush(function(injected_functions)
     TreesitterContextLineNumber { fg = p.ui.linenr, bg = p.ui.float_bg },
 
     LspInlayHint { fg = ui.inlayhint, bg = ui.inlayhint_bg, gui = krypton },
+    CmpGhostText { fg = ui.fg_dimmed, gui = krypton },
 
     DashboardIcon   { fg = ui.fg_dimmed },
     DashboardDesc   { fg = ui.fg_dimmed },
