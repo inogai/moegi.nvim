@@ -46,11 +46,11 @@ local lush = require("lush")
 local palette = require("lush_theme.moegi_palette")
 local terminal = require("lush_theme.moegi_terminal")
 
-local p = palette.dark
-
-if vim.o.background == "light" then
-  p = palette.light
+if not vim.o.background == "light" then
+  vim.o.background = "dark"
 end
+
+local p = palette[vim.o.background]
 
 terminal.set_term_colors(vim.o.background)
 
