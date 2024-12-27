@@ -1,4 +1,6 @@
-local terminal_colors = {
+local M = {}
+
+M.terminal_colors = {
   "black",
   "red",
   "green",
@@ -17,8 +19,17 @@ local terminal_colors = {
   "bright_white",
 }
 
-local p = require("lush_theme/moegi_palette").dark
+---@param dark? "dark" | "light"
+function M.set_term_colors(dark)
+  if dark == nil then
+    dark = vim.opt.background == "light" and "light" or "dark"
+  end
 
-for i, color in ipairs(terminal_colors) do
-  vim.g["terminal_color_" .. i - 1] = p.terminal[color]
+  local p = require("lush_theme.moegi_palette")[dark]
+
+  for i, color in ipairs(M.terminal_colors) do
+    vim.g["terminal_color_" .. i - 1] = p.terminal[color]
+  end
 end
+
+return M
