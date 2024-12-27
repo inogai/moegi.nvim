@@ -25,7 +25,7 @@ function M.set_term_colors(dark)
     dark = vim.opt.background == "light" and "light" or "dark"
   end
 
-  local p = require("lush_theme.moegi_palette")[dark]
+  local p = require("moegi.palette")[dark]
 
   for i, color in ipairs(M.terminal_colors) do
     vim.g["terminal_color_" .. i - 1] = p.terminal[color]
