@@ -59,7 +59,7 @@ function M.with_config(config)
       --
       -- See :h highlight-groups
       --
-      -- ColorColumn    { }, -- Columns set with 'colorcolumn'
+      ColorColumn    { bg = ui.float_bg }, -- Columns set with 'colorcolumn'
       Conceal        { fg = ui.fg_dimmed }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
       -- Cursor         { }, -- Character under the cursor
       -- CurSearch      { }, -- Highlighting a search pattern under the cursor (see 'hlsearch')
