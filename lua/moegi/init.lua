@@ -4,8 +4,10 @@ local M = {}
 
 ---@param config? moegi.Config
 function M.setup(config)
-  local config_complete = vim.tbl_deep_extend("force", require("moegi.config").default_config, config or {})
-  return template.with_config(config_complete)
+  vim.g.moegi_config = config or {}
+  package.loaded["moegi.lush_template"] = nil -- requires reload to make new config work
+  require("lush")(require("moegi.lush_template"))
+  vim.g.moegi_config = nil
 end
 
 return M

@@ -1,5 +1,7 @@
 -- You probably always want to set this in your vim file
--- vim.opt.background = "dark"
+if not vim.opt.background == "light" then
+  vim.opt.background = "dark"
+end
 vim.g.colors_name = "moegi"
 
 -- By setting our module to nil, we clear lua's cache,
@@ -14,7 +16,7 @@ vim.g.colors_name = "moegi"
 --
 -- The performance impact of this call can be measured in the hundreds of
 -- *nanoseconds* and such could be considered "production safe".
--- package.loaded["moegi"] = nil
+package.loaded["moegi.lush_template"] = nil
 
 -- include our theme file and pass it to lush to apply
-require("lush")(require("moegi").setup())
+require("lush")(require("moegi.lush_template"))
