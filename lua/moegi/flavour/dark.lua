@@ -21,5 +21,5 @@ return {
   surface0 = "#181818",
   base = "#202020",
 
-  inlyahint = "#7b7b7b",
+  inlayhint = "#7b7b7b",
 }
