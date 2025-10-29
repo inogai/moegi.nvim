@@ -1,29 +1,29 @@
 ---@class moegi.ConfigComplete
----@field bold string the override gui opts for bold text
----@field italic string the override gui opts for italic text
----@field undercurl string the override gui opts for undercurl text
----@field krypton string the override gui opts for "krypton" text, by default set to "bold italic"
----@field set_term_colors boolean `true` to set the `vim.g.terminal_color_{i}` variables automatically
----@field weak_colors boolean `true` to use a color palette with weaker contrast
+---@field flavour_light string  the flavour to use in light mode
+---@field flavour_dark string   the flavour to use in dark mode
+---@field constant_gui string   the gui opts for constant variable
+---@field string_gui string     the gui opts for string & char literals
+---@field keyword_gui string    the gui opts for keywords and numeric / boolean literals
+---@field diagnostic_underline_gui string the gui opts for diagnostic underlines
 
 ---@class moegi.Config
----@field bold? string the override gui opts for bold text
----@field italic? string the override gui opts for italic text
----@field undercurl? string the override gui opts for undercurl text
----@field krypton? string the override gui opts for "krypton" text, by default set to "bold italic"
----@field set_term_colors? boolean `true` to set the `vim.g.terminal_color_{i}` variables automatically
----@field weak_colors? boolean `true` to use a color palette with weaker contrast
+---@field flavour_light string  the flavour to use in light mode
+---@field flavour_dark string   the flavour to use in dark mode
+---@field constant_gui? string   the gui opts for constant variable
+---@field string_gui? string     the gui opts for string & char literals
+---@field keyword_gui? string    the gui opts for keywords and numeric / boolean literals
+---@field diagnostic_underline_gui? string the gui opts for diagnostic underlines
 
 local M = {}
 
 ---@type moegi.ConfigComplete
 M.default_config = {
-  bold = "bold",
-  italic = "italic",
-  undercurl = "undercurl",
-  krypton = "bold italic",
-  set_term_colors = true,
-  weak_colors = false,
+  flavour_light = "light",
+  flavour_dark = "dark",
+  constant_gui = "bold",
+  string_gui = "italic",
+  keyword_gui = "bold italic",
+  diagnostic_underline_gui = "undercurl",
 }
 
 return M
