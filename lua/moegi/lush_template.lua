@@ -180,7 +180,7 @@ local theme = lush(function(injected_functions)
     -- LspReferenceRead            { } , -- Used for highlighting "read" references
     -- LspReferenceWrite           { } , -- Used for highlighting "write" references
     -- LspReferenceTarget          { } , -- Used for highlighting reference targets (e.g. in a hover range)
-    LspInlayHint                { fg = C.inlayhint, bg = U.lighten(C.inlayhint, 0.81) } , -- Used for highlighting inlay hints
+    LspInlayHint                { fg = C.inlayhint, bg = U.vary_color({ dark = C.surface1, light = U.lighten(C.inlayhint, 0.15) }) } , -- Used for highlighting inlay hints
     LspCodeLens                 { fg = C.overlay0 } , -- Used to color the virtual text of the codelens. See |nvim_buf_set_extmark()|.
     -- LspCodeLensSeparator        { } , -- Used to color the separator between two or more code lenses.
     -- LspSignatureActiveParameter { } , -- Used to highlight the active parameter in the signature help. See |vim.lsp.handlers.signature_help()|.
