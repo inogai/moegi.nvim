@@ -53,7 +53,7 @@ This is the default configuration. You do not need to specify all of these optio
   string_gui = "italic",
   keyword_gui = "bold italic", -- would look cool if you set "bold italic" to a
                                -- different font, e.g. Monaspace Krypton
-  diagnostic_underline_gui = "undercurl", 
+  diagnostic_underline_gui = "undercurl",
                                -- also try "underline"
 }
 ```
