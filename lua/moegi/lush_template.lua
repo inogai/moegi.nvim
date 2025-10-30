@@ -350,7 +350,7 @@ local theme = lush(function(injected_functions)
     MiniIconsOrange { fg = C.orange },
     MiniIconsPurple { fg = C.purple },
     MiniIconsRed    { fg = C.red },
-    MiniIconsYellow { fg = C.gold }, -- gold generaly blends better. Use yellow only for warning highlights
+    MiniIconsYellow { fg = C.gold }, -- gold generally blends better. Use yellow only for warning highlights
   }
 end)
 
