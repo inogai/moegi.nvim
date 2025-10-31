@@ -140,7 +140,7 @@ function M.assert_brightness(color)
 end
 
 function M.vary_color(palettes, default)
-  local flvr = vim.g.moegi_current_flavour or "dark"
+  local flvr = require("moegi").get_flavour()
 
   if palettes[flvr] ~= nil then
     return palettes[flvr]
