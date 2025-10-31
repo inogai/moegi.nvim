@@ -1,7 +1,7 @@
 # moegi.nvim
 
 A port of the [moegi](https://github.com/moegi-design/vscode-theme) theme for
-neovim. Very alpha stage. Depends on [lush.nvim](https://github.com/rktjmp/lush.nvim).
+neovim. Very alpha stage.
 
 ## Preview
 
@@ -30,7 +30,6 @@ Open an issue or a PR if you want to help!
     'inogai/moegi.nvim',
     lazy = false, -- you generally want your colorscheme to load during startup
     priority = 1001,
-    dependencies = { 'rktjmp/lush.nvim' }, -- lush is required
     ---@module 'moegi'
     ---@type moegi.Config
     opts = {},
@@ -43,31 +42,44 @@ Open an issue or a PR if you want to help!
 
 ## Configuaration
 
-This is the default configuration. You do not need to specify all of these options.
+This is the default configuration. You do not need to specify all of these
+options.
 
 ```lua
 {
   flavour_light = "light",
   flavour_dark = "dark",
-  constant_gui = "bold",       -- set to "" if you don't want any font style
-  string_gui = "italic",
-  keyword_gui = "bold italic", -- would look cool if you set "bold italic" to a
-                               -- different font, e.g. Monaspace Krypton
-  diagnostic_underline_gui = "undercurl",
-                               -- also try "underline"
+  constant_gui = { "bold" },                  -- set to {} if you don't want any font style
+  string_gui = { "italic" },
+  keyword_gui = { "bold", "italic" },         -- looks cool if you set "bold italic" to a
+                                              -- different font, e.g. Monaspace Krypton
+  diagnostic_underline_gui = { "undercurl" }, -- also try "underline"
+
+  integrations = {                            -- set false to disable integration
+    render_markdown = true,
+    ufo = true,
+    mini_icons = true,
+  },
 }
 ```
 
 ## Credits
 
-- Thanks ddiu8081 for his great [VSCode Theme](https://github.com/moegi-design/vscode-theme/)!
-- Thanks [rktjmp/lush.nvim](https://github.com/rktjmp/lush.nvim) which makes
-  this possible.
+- Thanks ddiu8081 for his great
+  [VSCode Theme](https://github.com/moegi-design/vscode-theme/)!
+- An earlier version of moegi.nvim depended on
+  [rktjmp/lush.nvim](https://github.com/rktjmp/lush.nvim).
 
 - I refered heavily to [cappuccin/nvim](https://github.com/catppuccin/nvim) and
-  [ellisonleao/gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim) on
-  how they organize a colorscheme.
+  [ellisonleao/gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim) on how
+  they organize a colorscheme.
 
-- I borrowed `utils.lua` from [cappuccin/nvim](https://github.com/catppuccin/nvim)
-  and `lib/hsluv.lua` from [hsluv/hsluv-lua](https://github.com/hsluv/hsluv-lua),
-  see their licenses for details.
+- Thanks
+  [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim/blob/2642dbb83333e0575d1c3436e1d837926871c5fb/.lazy.lua)
+  for his excellent implementation of live reload & live preview using
+  `mini.hipatterns`. I borrowed `.lazy.lua` from there. See the license header.
+
+- I borrowed `utils.lua` from
+  [cappuccin/nvim](https://github.com/catppuccin/nvim) and `lib/hsluv.lua` from
+  [hsluv/hsluv-lua](https://github.com/hsluv/hsluv-lua), see the license headers
+  in those files.
