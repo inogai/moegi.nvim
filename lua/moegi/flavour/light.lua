@@ -10,7 +10,7 @@ return {
   gray = "#666666",
   yellow = "#895603",
 
-  pale = "#e7d38f",
+  pale = "#6b588e",
 
   text = "#333333",
   subtext1 = "#666666",
