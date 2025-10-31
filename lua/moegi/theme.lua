@@ -1,43 +1,69 @@
---
--- Built with,
---
---        ,gggg,
---       d8" "8I                         ,dPYb,
---       88  ,dP                         IP'`Yb
---    8888888P"                          I8  8I
---       88                              I8  8'
---       88        gg      gg    ,g,     I8 dPgg,
---  ,aa,_88        I8      8I   ,8'8,    I8dP" "8I
--- dP" "88P        I8,    ,8I  ,8'  Yb   I8P    I8
--- Yb,_,d88b,,_   ,d8b,  ,d8b,,8'_   8) ,d8     I8,
---  "Y8P"  "Y888888P'"Y88P"`Y8P' "YY8P8P88P     `Y8
---
+local Moegi = require("moegi")
 
-local lush, U, C, c = require("moegi")._init()
+-- Override globals for easier access within the themes
+local globals = { U = U, C = C, O = O }
 
-package.loaded["moegi.theme.base"] = nil
-package.loaded["moegi.theme.syntax"] = nil
-package.loaded["moegi.theme.lsp"] = nil
-package.loaded["moegi.theme.treesitter"] = nil
+U = require("moegi.utils")
+C = require("moegi").get_palette()
+O = Moegi._config
 
-local specs = {
-  require("moegi.theme.base"),
-  require("moegi.theme.syntax"),
-  require("moegi.theme.lsp"),
-  require("moegi.theme.treesitter"),
-}
+vim.g.colors_name = "moegi"
 
-vim
-  .iter(c.integrations)
-  :filter(function(_, v)
-    return v ~= false
-  end)
-  :each(function(k, _)
-    package.loaded["moegi.theme.integrations." .. k] = nil
-    local ok, spec = pcall(require, "moegi.theme.integrations." .. k)
-    if ok and spec then
-      table.insert(specs, spec)
-    end
-  end)
+---@class moegi.Spec
+---@field help string
+---@field get fun():table<string, vim.api.keyset.highlight>
 
-return lush.merge(specs)
+local highlights = {}
+
+---@class moegi.hl
+---@field fg? string
+---@field bg? string
+---@field sp? string
+---@field link? string
+---@field gui? string[]
+
+function highlights_add(spec)
+  package.loaded[spec] = nil
+
+  local module_ok, module = pcall(require, spec)
+
+  if module_ok and module then
+    highlights = vim.tbl_extend("force", highlights, module)
+  end
+end
+
+highlights_add("moegi.theme.base")
+highlights_add("moegi.theme.syntax")
+highlights_add("moegi.theme.lsp")
+highlights_add("moegi.theme.treesitter")
+
+for integration, enabled in pairs(O.integrations or {}) do
+  if enabled then
+    highlights_add("moegi.theme.integrations." .. integration)
+  end
+end
+
+---@type moegi.hl
+local function to_nvim_hl(hl)
+  local nvim_hl = {}
+
+  nvim_hl.fg = hl.fg
+  nvim_hl.bg = hl.bg
+  nvim_hl.sp = hl.sp
+  nvim_hl.link = hl.link -- TODO: maybe consider a augment-based link?
+
+  for k, v in pairs(hl.gui or {}) do
+    nvim_hl[v] = true
+  end
+
+  return nvim_hl
+end
+
+for name, hl in pairs(highlights) do
+  vim.api.nvim_set_hl(0, name, to_nvim_hl(hl))
+end
+
+-- restore globals
+U = globals.U
+C = globals.C
+O = globals.O

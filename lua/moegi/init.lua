@@ -10,7 +10,7 @@ function M.setup(config)
   M._config = vim.tbl_deep_extend("force", default_config, M._config)
   package.loaded["moegi.theme"] = nil -- requires reload to make new config work
 
-  require("lush")(require("moegi.theme"))
+  require("moegi.theme")
 end
 
 function M.get_flavour()
@@ -29,7 +29,7 @@ function M.get_palette()
 end
 
 function M._init()
-  return require("lush"), require("moegi.utils"), M.get_palette(), M._config
+  return require("moegi.utils"), M.get_palette(), M._config
 end
 
 return M

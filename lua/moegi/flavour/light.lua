@@ -1,25 +1,23 @@
+local U = require("moegi.utils")
+
 return {
-  red = "#e38181",
   orange = "#b5855c",
   gold = "#c7792b",
-  green = "#377961",
-  blue = "#7098d4",
-  purple = "#b290ba",
+  mint = "#377961",
   cyan = "#668f9a",
   pink = "#c05386",
-  gray = "#666666",
-  yellow = "#895603",
 
   pale = "#6b588e",
+  red = "#e38181",
+  yellow = "#895603",
+  green = "#26966a",
+  blue = "#7098d4",
 
-  text = "#333333",
-  subtext1 = "#666666",
-  subtext0 = "#aaaaaa",
-  overlay1 = "#444444",
-  overlay0 = "#888888",
-  surface1 = "#f6f6f6",
-  surface0 = "#f9f9f9",
+  solid = "#f9f9f9",
   base = "#ffffff",
-
-  inlayhint = "#26966a",
+  overlay1 = "#f6f6f6",
+  overlay2 = U.darken("#26966a", 0.3, "#ffffff"),
+  muted = "#aaaaaa",
+  text2 = "#444444",
+  text = "#333333",
 }
