@@ -41,6 +41,7 @@ highlights_add("moegi.theme.base")
 highlights_add("moegi.theme.syntax")
 highlights_add("moegi.theme.lsp")
 highlights_add("moegi.theme.treesitter")
+highlights_add("moegi.theme.semantic_tokens")
 
 for integration, enabled in pairs(O.integrations or {}) do
   if enabled then
