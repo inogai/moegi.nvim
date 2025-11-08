@@ -1,6 +1,5 @@
 -- https://github.com/MeanderingProgrammer/render-markdown.nvim#colors
 
--- stylua: ignore
 return {
   RenderMarkdownH1     = { fg = C.red },
   RenderMarkdownH2     = { fg = C.orange },

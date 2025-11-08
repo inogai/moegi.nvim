@@ -1,6 +1,5 @@
 -- https://github.com/nvim-mini/mini.nvim/blob/main/doc/mini-icons.txt
 
--- stylua: ignore
 return {
   MiniIconsAzure  = { fg = U.darken(C.cyan, 0.4, C.blue) },
   MiniIconsBlue   = { fg = C.blue },

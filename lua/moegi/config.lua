@@ -32,13 +32,13 @@ local M = {}
 M.default_config = {
   flavour_light = "light",
   flavour_dark = "dark",
-  constant_gui = { "bold" }, -- set to {} if you don't want any font style
+  constant_gui = { "bold" },                  -- set to {} if you don't want any font style
   string_gui = { "italic" },
-  keyword_gui = { "bold", "italic" }, -- looks cool if you set "bold italic" to a
+  keyword_gui = { "bold", "italic" },         -- looks cool if you set "bold italic" to a
   -- different font, e.g. Monaspace Krypton
   diagnostic_underline_gui = { "undercurl" }, -- also try "underline"
 
-  integrations = { -- set false to disable integration
+  integrations = {                            -- set false to disable integration
     render_markdown = true,
     ufo = true,
     mini_icons = true,
