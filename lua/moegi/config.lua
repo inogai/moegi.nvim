@@ -7,6 +7,8 @@
 ---@field render_markdown boolean
 ---@field ufo boolean
 ---@field mini_icons boolean
+---@field fzf_lua boolean
+---@field rainbow_delimeters boolean
 
 ---@class moegi.ConfigComplete
 ---@field flavour_light string  the flavour to use in light mode
@@ -43,6 +45,7 @@ M.default_config = {
     ufo = true,
     mini_icons = true,
     fzf_lua = true,
+    rainbow_delimeters = true,
   },
 }
 

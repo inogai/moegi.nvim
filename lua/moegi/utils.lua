@@ -7,7 +7,7 @@ MIT License
 Copyright (c) 2021 Catppuccin
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in 
+this software and associated documentation files (the "Software"), to deal in
 the Software without restriction, including without limitation the rights to
 use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
 of the Software, and to permit persons to whom the Software is furnished to do
@@ -67,6 +67,21 @@ function M.lighten(hex, amount, fg)
   return M.blend(hex, fg or M.fg, math.abs(amount))
 end
 
+--- Faint a color based on the background
+--- @param hex string hexadecimal value of a color
+--- @param amount number number between 0 and 1. 0 results in solid white/black
+--- @return string hexadecimal value of the fainted color
+function M.dimmed(hex, amount)
+  return M.vary_color({
+    dark = function(hex, amount)
+      return M.blend(hex, C.base, amount)
+    end,
+    light = function(hex, amount)
+      return M.blend(hex, C.base, amount)
+    end
+  })(hex, amount)
+end
+
 function M.brighten(color, percentage)
   local hsl = hsluv.hex_to_hsluv(color)
   local larpSpace = 100 - hsl[3]
@@ -116,7 +131,7 @@ function M.color_is_bright(r, g, b)
   -- Counting the perceptive luminance - human eye favors green color
   local luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
   if luminance > 0.5 then
-    return true -- Bright colors, black font
+    return true  -- Bright colors, black font
   else
     return false -- Dark colors, text font
   end
