@@ -2,6 +2,9 @@
 ---@field render_markdown? boolean
 ---@field ufo? boolean
 ---@field mini_icons? boolean
+---@field fzf_lua? boolean
+---@field rainbow_delimeters? boolean
+---@field flash? boolean
 
 ---@class moegi.IntegrationConfigComplete
 ---@field render_markdown boolean
@@ -9,6 +12,7 @@
 ---@field mini_icons boolean
 ---@field fzf_lua boolean
 ---@field rainbow_delimeters boolean
+---@field flash boolean
 
 ---@class moegi.ConfigComplete
 ---@field flavour_light string  the flavour to use in light mode
@@ -34,18 +38,19 @@ local M = {}
 M.default_config = {
   flavour_light = "light",
   flavour_dark = "dark",
-  constant_gui = { "bold" },                  -- set to {} if you don't want any font style
+  constant_gui = { "bold" },                 -- set to {} if you don't want any font style
   string_gui = { "italic" },
-  keyword_gui = { "bold", "italic" },         -- looks cool if you set "bold italic" to a
+  keyword_gui = { "bold", "italic" },        -- looks cool if you set "bold italic" to a
   -- different font, e.g. Monaspace Krypton
   diagnostic_underline_gui = { "undercurl" }, -- also try "underline"
 
-  integrations = {                            -- set false to disable integration
+  integrations = {                           -- set false to disable integration
     render_markdown = true,
     ufo = true,
     mini_icons = true,
     fzf_lua = true,
     rainbow_delimeters = true,
+    flash = true,
   },
 }
 
