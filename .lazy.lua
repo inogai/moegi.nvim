@@ -76,7 +76,8 @@ if ok then
 
     hl_group = {
       pattern = function(buf)
-        return vim.api.nvim_buf_get_name(buf):find("lua/" .. M.module) and '^%s*-?-?%s*%[?"?()[%w%.@]+()"?%]?%s*='
+        return vim.api.nvim_buf_get_name(buf):find("lua/" .. M.module)
+            and '^%s*-?-?%s*%[?"?()[%w%.@]+()"?%]?%s*='
       end,
       group = function(buf, match)
         local group = M.hl_group(match, buf)
@@ -110,7 +111,9 @@ if ok then
   }
 
   -- Apply the highlighters
-  hi.setup({ highlighters = highlighters })
+  hi.setup(vim.tbl_deep_extend("force", hi.config or {}, {
+    highlighters = highlighters,
+  }))
 end
 
 -- Initialize
