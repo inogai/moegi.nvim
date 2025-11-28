@@ -78,7 +78,7 @@ function M.dimmed(hex, amount)
     end,
     light = function(hex, amount)
       return M.blend(hex, C.base, amount)
-    end
+    end,
   })(hex, amount)
 end
 
@@ -131,7 +131,7 @@ function M.color_is_bright(r, g, b)
   -- Counting the perceptive luminance - human eye favors green color
   local luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
   if luminance > 0.5 then
-    return true  -- Bright colors, black font
+    return true -- Bright colors, black font
   else
     return false -- Dark colors, text font
   end

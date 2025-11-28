@@ -1,9 +1,9 @@
 return {
-  FzfLuaNormal     = { link = "Pmenu" },                   -- Main win fg/bg
-  FzfLuaBorder     = { link = "PmenuBorder" },             -- Main win border
-  FzfLuaTitle      = { "FzfLuaNormal", gui = { "bold" } }, -- Main win title
-  FzfLuaTitleFlags = { fg = C.text2, bg = C.overlay1 },    -- Main win title flags
-  FzfLuaBackdrop   = { bg = C.solid },                     -- Backdrop color
+  FzfLuaNormal = { link = "Pmenu" }, -- Main win fg/bg
+  FzfLuaBorder = { link = "PmenuBorder" }, -- Main win border
+  FzfLuaTitle = { "FzfLuaNormal", gui = { "bold" } }, -- Main win title
+  FzfLuaTitleFlags = { fg = C.text2, bg = C.overlay1 }, -- Main win title flags
+  FzfLuaBackdrop = { bg = C.solid }, -- Backdrop color
   -- FzfLuaPreviewNormal = {}, -- Builtin preview fg/bg
   -- FzfLuaPreviewBorder = {}, -- Builtin preview border
   -- FzfLuaPreviewTitle = {}, -- Builtin preview title
@@ -17,8 +17,8 @@ return {
   -- FzfLuaScrollFloatFull = {}, -- Builtin preview float scroll full
   -- FzfLuaHelpNormal = {}, -- Help win fg/bg
   -- FzfLuaHelpBorder = {}, -- Help win border
-  FzfLuaHeaderBind = { fg = C.gold },                    -- Header keybind
-  FzfLuaHeaderText = { fg = C.pale, gui = { "bold" } },  -- Header text
+  FzfLuaHeaderBind = { fg = C.gold }, -- Header keybind
+  FzfLuaHeaderText = { fg = C.pale, gui = { "bold" } }, -- Header text
   -- FzfLuaPathColNr = {}, -- Path col nr (qf,lsp,diag)
   -- FzfLuaPathLineNr = {}, -- Path line nr (qf,lsp,diag)
   -- FzfLuaBufName = {}, -- Buffer name (lines)
@@ -37,7 +37,7 @@ return {
   -- FzfLuaCmdEx = {}, -- Ex commands in commands
   -- FzfLuaCmdBuf = {}, -- Buffer commands in commands
   -- FzfLuaCmdGlobal = {}, -- Global commands in commands
-  FzfLuaFzfNormal  = { "Normal" }, -- fzf's fg|bg
+  FzfLuaFzfNormal = { "Normal" }, -- fzf's fg|bg
   -- FzfLuaFzfCursorLine = {}, -- fzf's fg+|bg+
   -- FzfLuaFzfMatch = {}, -- fzf's hl+
   -- FzfLuaFzfBorder = {}, -- fzf's border

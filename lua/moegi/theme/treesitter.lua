@@ -1,9 +1,9 @@
 return {
   -- See :h treesitter-highlight-groups
-  ["@variable"]                  = { fg = C.pale },
-  ["@type.builtin.cpp"]          = { fg = C.pink, gui = O.keyword_gui },
-  ["@markup.strong"]             = { fg = C.pale, gui = { "bold" } },
-  ["@markup.italic"]             = { fg = C.pale, gui = { "italic" } },
+  ["@variable"] = { fg = C.pale },
+  ["@type.builtin.cpp"] = { fg = C.pink, gui = O.keyword_gui },
+  ["@markup.strong"] = { fg = C.pale, gui = { "bold" } },
+  ["@markup.italic"] = { fg = C.pale, gui = { "italic" } },
 
   ["@markup.heading.1.markdown"] = { fg = C.red },
   ["@markup.heading.2.markdown"] = { fg = C.orange },
