@@ -2,6 +2,7 @@
 ---@field render_markdown? boolean
 ---@field ufo? boolean
 ---@field mini_icons? boolean
+---@field mini_statusline? boolean
 ---@field fzf_lua? boolean
 ---@field rainbow_delimeters? boolean
 ---@field flash? boolean
@@ -10,6 +11,7 @@
 ---@field render_markdown boolean
 ---@field ufo boolean
 ---@field mini_icons boolean
+---@field mini_statusline boolean
 ---@field fzf_lua boolean
 ---@field rainbow_delimeters boolean
 ---@field flash boolean
@@ -48,6 +50,7 @@ M.default_config = {
     render_markdown = true,
     ufo = true,
     mini_icons = true,
+    mini_statusline = true,
     fzf_lua = true,
     rainbow_delimeters = true,
     flash = true,
